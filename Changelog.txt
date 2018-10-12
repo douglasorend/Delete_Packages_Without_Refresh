@@ -1,3 +1,8 @@
+v2.0 - August 28th, 2017
+o Rewrote mod for compatibility with SMF 2.1 Beta 3.
+o Added CSS animation to be displayed while processing AJAX request.
+o If no packages are in list after a delete, window is reloaded.
+
 v1.1 - August 25th, 2017
 o Fixed corrupted search lines that prevent proper installation on SMF 2.0.x!
 

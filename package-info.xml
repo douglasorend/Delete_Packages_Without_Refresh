@@ -5,15 +5,19 @@
 	<id>Dougiefresh:DeleteWithoutRefresh</id>
 	<name>Delete Package Without Refresh</name>
 	<type>modification</type>
-	<version>1.1</version>
+	<version>2.0</version>
 
-	<install for="2.0 - 2.0.99">
+	<install for="2.0 - 2.0.99, 2.1 Beta 3">
 		<readme parsebbc="true">readme.txt</readme>
-		<modification>install_20x.xml</modification>
-		<require-file name="ajax_delete.js" destination="$themedir/scripts" />
+		<code>add_remove_hooks.php</code>
+		<require-file name="Subs-DPWR.php" destination="$sourcedir" />
+		<require-file name="dpwr_animation.css" destination="$themedir/css" />
+		<require-file name="dpwr_delete.js" destination="$themedir/scripts" />
 	</install>
-	<uninstall for="2.0 - 2.0.99">
-		<modification reverse="true">install_20x.xml</modification>
-		<remove-file name="$themedir/scripts/ajax_delete.js" />
+	<uninstall for="2.0 - 2.0.99, 2.1 Beta 3">
+		<code>add_remove_hooks.php</code>
+		<remove-file name="$sourcedir/Subs-DPWR.php" />
+		<remove-file name="$themedir/css/dpwr_animation.css" />
+		<remove-file name="$themedir/scripts/dpwr_delete.js" />
 	</uninstall>
 </package-info>

@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]DELETE PACKAGES WITHOUT REFRESH v1.1[/b][/size][/color]
+[center][color=red][size=16pt][b]DELETE PACKAGES WITHOUT REFRESH v2.0[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4087]Link to Mod[/url]
 [/center]
 [hr]
@@ -13,10 +13,10 @@ This mod also fixes the lack of alternating row colors in the avatar, language a
 There are no admin settings.  To remove this, you must uninstall the mod.
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
-This mod was tested on SMF 2.0.14, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
+This mod was tested on SMF 2.0.14 and SMF 2.1 Beta 3, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=662.msg975#msg975]XPtsp.com[/url].
+The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=1605.msg2283#msg2283]XPtsp.com[/url].
 
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
 [quote]Copyright (c) 2017, Douglas Orend
