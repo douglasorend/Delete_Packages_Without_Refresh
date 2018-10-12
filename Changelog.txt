@@ -1,3 +1,7 @@
+v2.1 - October 11th, 2018
+o No functionality change.
+o Updated documentation to point to new website.
+
 v2.0 - August 28th, 2017
 o Rewrote mod for compatibility with SMF 2.1 Beta 3.
 o Added CSS animation to be displayed while processing AJAX request.
