@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:DeleteWithoutRefresh</id>
+<name>Delete Package Without Refresh</name>
+<version>1.0</version>
+
+<file name="$sourcedir/Packages.php">
+	<!-- PackageBrowse function -->
+	<operation>
+		<search position="before"><![CDATA[global $txt, $boarddir, $scripturl, $context, $forum_version]]></search>
+		<add><![CDATA[, $boardurl]]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[$context['sub_template'] = 'browse';]]></search>
+		<add><![CDATA[
+
+	// Headers required for Delete Package Without Refresh mod:
+	$context['html_headers'] .= '
+	<script type="text/javascript" src="' . $boardurl . '/Themes/default/scripts/ajax_delete.js?smf20"></script>
+	<script type="text/javascript"><!-- // --><![CDATA[<]]><![CDATA[![CDATA[
+		var smc_package_delete_bad = "' . $txt['package_delete_bad'] . '";
+	// ]]]]><![CDATA[></script>';]]></add>
+	</operation>
+	
+	<!-- PackageRemove function -->
+	<operation>
+		<search position="replace"><![CDATA[
+	}
+
+	redirectexit('action=admin;area=packages;sa=browse');]]></search>
+		<add><![CDATA[
+		if (isset($_REQUEST['ajax']))
+			echo 'Done';
+	}
+	elseif (isset($_REQUEST['ajax']))
+		echo 'Fail';
+
+	if (isset($_REQUEST['ajax']))
+		exit;
+	redirectexit('action=admin;area=packages;sa=browse');]]></add>
+	</operation>
+</file>
+<file name="$themedir/Packages.template.php">
+	<!-- template_browse function -->
+	<!-- NOTE: Changes done for Mods -->
+	<operation>	<!-- line 638 -->
+		<search position="replace"><![CDATA[foreach ($context['available_mods'] as $i => $package)
+		{
+			echo '
+			<tr class="', $alt ? 'windowbg2' : 'windowbg', '">
+				<td>', ++$i, '.</td>]]></search>
+		<add><![CDATA[foreach ($context['available_mods'] as $i => $package)
+		{
+			echo '
+			<tr class="', $alt ? 'windowbg2' : 'windowbg', ' dpwr_package_row" id="package_', ++$i, '">
+				<td class="dpwr_package">', $i, '.</td>]]></add>
+	</operation>
+	<operation>	<!-- line 668 -->
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'package\', this);"]]></add>
+	</operation>
+
+	<!-- NOTE: Changes done for Avatars -->
+	<operation>	<!-- line 698 -->
+		<search position="replace"><![CDATA[foreach ($context['available_avatars'] as $i => $package)
+		{
+			echo '
+			<tr class="windowbg2">
+				<td>', ++$i, '.</td>]]></search>
+		<add><![CDATA[$alt = true;
+		foreach ($context['available_avatars'] as $i => $package)
+		{
+			echo '
+			<tr class="dpwr_avatar_row ', ($alt = !$alt) ? 'windowbg2' : 'windowbg', '" id="avatar_', ++$i, '">
+				<td class="dpwr_avatar">', $i, '.</td>]]></add>
+	</operation>
+	<operation>	<!-- line 727 -->
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'avatar\', this);"]]></add>
+	</operation>
+
+	<!-- NOTE: Changes done for Languages -->
+	<operation>	<!-- line 756 -->
+		<search position="replace"><![CDATA[foreach ($context['available_languages'] as $i => $package)
+		{
+			echo '
+			<tr class="windowbg">
+				<td>' . ++$i . '.</td>]]></search>
+		<add><![CDATA[$alt = true;
+		foreach ($context['available_languages'] as $i => $package)
+		{
+			echo '
+			<tr class="dpwr_language_row ', ($alt = !$alt) ? 'windowbg2' : 'windowbg', '" id="language_', ++$i, '">
+				<td class="dpwr_language">', $i, '.</td>]]></add>
+	</operation>
+	<operation>	<!-- line 758 -->
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'language\', this);"]]></add>
+	</operation>
+	
+	<!-- NOTE: Changes done for Other -->
+	<operation>	<!-- line 814 -->
+		<search position="replace"><![CDATA[foreach ($context['available_other'] as $i => $package)
+		{
+			echo '
+			<tr class="windowbg2">
+				<td>' . ++$i . '.</td>]]></search>
+		<add><![CDATA[$alt = true;
+		foreach ($context['available_other'] as $i => $package)
+		{
+			echo '
+			<tr class="dpwr_other_row ', ($alt = !$alt) ? 'windowbg2' : 'windowbg', '" id="other_', ++$i, '">
+				<td class="dpwr_other">', $i, '.</td>]]></add>
+	</operation>
+	<operation>	<!-- line 843 -->
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'other\', this);"]]></add>
+	</operation>
+</file>
+</modification>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>Dougiefresh:DeleteWithoutRefresh</id>
+	<name>Delete Package Without Refresh</name>
+	<type>modification</type>
+	<version>1.0</version>
+
+	<install for="2.0 - 2.0.99">
+		<readme parsebbc="true">readme.txt</readme>
+		<modification>install_20x.xml</modification>
+		<require-file name="ajax_delete.js" destination="$themedir/scripts" />
+	</install>
+	<uninstall for="2.0 - 2.0.99">
+		<modification reverse="true">install_20x.xml</modification>
+		<remove-file name="$themedir/scripts/ajax_delete.js" />
+	</uninstall>
+
+	<install for="2.1 Beta 3">
+		<readme parsebbc="true">readme.txt</readme>
+		<modification>install_21x.xml</modification>
+		<require-file name="ajax_delete.js" destination="$themedir/scripts" />
+	</install>
+	<uninstall for="2.1 Beta 3">
+		<modification reverse="true">install_21x.xml</modification>
+		<remove-file name="$themedir/scripts/ajax_delete.js" />
+	</uninstall>
+</package-info>
