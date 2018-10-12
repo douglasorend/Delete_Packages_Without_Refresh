@@ -1,2 +1,5 @@
-v1.0 - Unpublished
+v1.1 - August 25th, 2017
+o Fixed corrupted search lines that prevent proper installation on SMF 2.0.x!
+
+v1.0 - August 23rd, 2017
 o Initial release to the public

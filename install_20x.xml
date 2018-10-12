@@ -3,7 +3,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:DeleteWithoutRefresh</id>
 <name>Delete Package Without Refresh</name>
-<version>1.0</version>
+<version>1.1</version>
 
 <file name="$sourcedir/Packages.php">
 	<!-- PackageBrowse function -->
@@ -57,7 +57,7 @@
 				<td class="dpwr_package">', $i, '.</td>]]></add>
 	</operation>
 	<operation>	<!-- line 668 -->
-		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return confirm(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
 		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'package\', this);"]]></add>
 	</operation>
 
@@ -76,7 +76,7 @@
 				<td class="dpwr_avatar">', $i, '.</td>]]></add>
 	</operation>
 	<operation>	<!-- line 727 -->
-		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return confirm(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
 		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'avatar\', this);"]]></add>
 	</operation>
 
@@ -95,7 +95,7 @@
 				<td class="dpwr_language">', $i, '.</td>]]></add>
 	</operation>
 	<operation>	<!-- line 758 -->
-		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return confirm(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
 		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'language\', this);"]]></add>
 	</operation>
 	
@@ -114,7 +114,7 @@
 				<td class="dpwr_other">', $i, '.</td>]]></add>
 	</operation>
 	<operation>	<!-- line 843 -->
-		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return ajax_delete(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
+		<search position="replace"><![CDATA[', $package['is_installed'] && $package['is_current'] ? ' onclick="return confirm(\'' . $txt['package_delete_bad'] . '\');"' : '', ']]></search>
 		<add><![CDATA[ onclick="return ajax_delete(', $package['is_installed'] && $package['is_current'] ? '1' : '0', ', ', $i, ', \'other\', this);"]]></add>
 	</operation>
 </file>
