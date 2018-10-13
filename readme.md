@@ -1,24 +1,27 @@
 --------
 
-# DELETE PACKAGES WITHOUT REFRESH v2.1
+## DELETE UNACTIVATED MEMBERS v1.5
 
-[**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=4087)
+[**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=4163)
 
 --------
 
-# Introduction
-As of this writing, I currently have 187 mod packages in my Package Manager.  Deleting one of them forces a refresh of the screen I'm looking at.  This forces me to start over looking for mods.  This mod fixes this issue.
+## Introduction
+One day, I looked at my forum and saw that 9,870 out of 14,776 were unactivated, most of them over 1 year old.  This irritated me, so I wrote this mod to automatically remove members who haven't activated their account after a specified number of days.  There is also an option to email users that their membership has been deleted due to lack of activation of the membership.
 
-This mod also fixes the lack of alternating row colors in the avatar, language and other mod sections.
+Please note that this mod does not set the number of days setting initially.  You must do this in order for this mod to function.  I recommend 30 days, however, you can set it to whatever you want.
 
 ## Admin Settings
-There are no admin settings.  To remove this, you must uninstall the mod.
+In **Admin** => **Members** => **Registration** => **Settings**, there are 2 new settings:
+
+- **Days before unactivated accounts are deleted**
+- **Notify users whose accounts are being deleted?**
 
 ## Compatibility Notes
-This mod was tested on SMF 2.0.14 and SMF 2.1 Beta 3, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
+This mod was tested on SMF 2.0.14 and SMF 2.1 Beta 3, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.
 
 ## Changelog
-The changelog can be viewed at [XPtsp.com](http://www.xptsp.com/board/free-modifications/delete-packages-without-refresh/).
+The changelog can be viewed at [XPtsp.com](http://www.xptsp.com/board/free-modifications/delete-unactivated-members/).
 
 ## License
 Copyright (c) 2017 - 2018, Douglas Orend
